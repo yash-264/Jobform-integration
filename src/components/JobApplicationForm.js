@@ -175,12 +175,12 @@ export default function JobApplicationForm() {
 
         <form id="job-application-form" onSubmit={handleSubmit} noValidate>
 
-          <div className="progress-bar">
+          {/* <div className="progress-bar">
             <div className="progress" id="progress" style={{ width: '100%' }} />
             <div className="step completed"><i className="fas fa-check" /></div>
             <div className="step completed"><i className="fas fa-check" /></div>
             <div className="step completed"><i className="fas fa-check" /></div>
-          </div>
+          </div> */}
 
           {/* --- Step 1: Personal Information (shown inline) --- */}
           <div className="form-step active" id="step-1">
@@ -332,7 +332,7 @@ export default function JobApplicationForm() {
             </div>
 
             <div className={`input-field ${invalid.salary ? 'invalid' : ''} ${shaking.salary ? 'shake-anim' : ''}`}>
-              <label htmlFor="salary">Expected Salary (USD)</label>
+              <label htmlFor="salary">Expected Salary (LPA)</label>
               <input
                 type="number"
                 id="salary"
@@ -400,7 +400,7 @@ export default function JobApplicationForm() {
                 checked={formData.terms}
                 onChange={handleChange}
               />
-              <label htmlFor="terms">I agree to the <a href="#">terms and conditions</a></label>
+              <label htmlFor="terms">I agree to the <a href="#">terms and conditions.</a></label>
             </div>
 
             <div className="button-group">

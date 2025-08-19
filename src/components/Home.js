@@ -10,7 +10,7 @@ const Home = () => {
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-content">
-          <h1>Welcome to <span>WhiteCircle</span></h1>
+          <h1>Welcome to <span>WhiteCircle!</span></h1>
           <p>Your Future Starts Here. Explore careers and services designed for innovation.</p>
           <Link to="/JobApplicationForm" className="cta-btn">Apply for a Job</Link>
         </div>
