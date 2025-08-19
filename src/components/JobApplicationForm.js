@@ -63,6 +63,7 @@ export default function JobApplicationForm() {
       fileInputRef.current.value = '';
       return;
     }
+    
     setFormData((prev) => ({ ...prev, resume: file }));
     setResumeInfo({ name: file.name, sizeKB: Math.round(file.size / 1024) });
     setInvalid((prev) => ({ ...prev, resume: false }));
@@ -134,6 +135,7 @@ export default function JobApplicationForm() {
 
   try {
     let resumeFileId = null;
+    let resumeURL = null;
 
     // Upload resume to Appwrite first
     if (formData.resume) {
@@ -142,12 +144,13 @@ export default function JobApplicationForm() {
         throw new Error("Resume upload failed, no file ID returned.");
       }
       resumeFileId = uploadedFile.$id;
+      resumeURL = `https://fra.cloud.appwrite.io/v1/storage/buckets/689c0f80002aff1d90ee/files/${resumeFileId}/view?project=689c0f13000ff4d84a75&mode=admin`;
     }
 
     // Save the rest of the data to Firebase (with file ID from Appwrite)
     await saveJobApplication({
       ...formData,
-      resumeId: resumeFileId // ✅ store as resumeId, not resume
+      resumeId: resumeFileId,resumeURL // ✅ store as resumeId, not resume
     });
 
     setModalOpen(true);
