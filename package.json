@@ -2,6 +2,7 @@
   "name": "firebase-setup",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
@@ -42,4 +43,6 @@
   "devDependencies": {
     "source-map-loader": "^5.0.0"
   }
+
+  
 }
